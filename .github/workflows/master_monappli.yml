@@ -25,8 +25,11 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
       
-      - name: Test
-        run: dotnet test --no-restore --verbosity norm
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run tests 
+        run: npm test
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
