@@ -26,7 +26,7 @@ jobs:
         run: dotnet build --configuration Release
       
       - name: Install dependencies
-        run: dotnet add package Newtonsoft.Json --version 12.0.1
+        run: dotnet add package NUnit --version 3.13.2
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
